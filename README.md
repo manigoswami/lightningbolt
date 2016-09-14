@@ -5,6 +5,15 @@ This README would normally document whatever steps are necessary to get your app
 
 CMD: nohup ./promiseservice.sh /tmp/daemon_promise> daemon.log 2>&1 &
 
+Recommended System Configuration:
+RAM: 32GB
+VCPUs: 4 VCPU
+Disk: 160GB
+	OR
+RAM: 32GB
+VCPUs: 8 VCPU
+Disk: 160GB
+
 ### What is this repository for? ###
 
 * Quick summary
