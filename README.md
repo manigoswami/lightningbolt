@@ -2,11 +2,11 @@
 
 ### Installation Instructions:###
 * wget http://repo.continuum.io/archive/Anaconda3-4.0.0-Linux-x86_64.sh
-   bash Anaconda3-4.0.0-Linux-x86_64.sh
-* Add following bash
-  export PYTHONPATH="{python_path}:{path_to_thuderbolt_directory}"
-  Example:
-export PYTHONPATH="/home/centos/anaconda3/bin/python:/home/centos/RealtimePromise/"
+* bash Anaconda3-4.0.0-Linux-x86_64.sh
+* Add following bash:
+  * export PYTHONPATH="{python_path}:{path_to_thuderbolt_directory}"
+  *Example:
+  **export PYTHONPATH="/home/centos/anaconda3/bin/python:/home/cento/RealtimePromise/"**
 Source the bash
 curl "https://bootstrap.pypa.io/get-pip.py" -o "get-pip.py"
 sudo python get-pip.py
