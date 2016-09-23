@@ -7,28 +7,28 @@
   * export PYTHONPATH="{python_path}:{path_to_thuderbolt_directory}"
   *Example:
   **export PYTHONPATH="/home/centos/anaconda3/bin/python:/home/cento/RealtimePromise/"**
-Source the bash
-curl "https://bootstrap.pypa.io/get-pip.py" -o "get-pip.py"
-sudo python get-pip.py
+* Source the bash
+* curl "https://bootstrap.pypa.io/get-pip.py" -o "get-pip.py"
+* sudo python get-pip.py
 
-pip install cherrypy
-pip install bottle
-pip install wsgi-request-logger
-pip install boto3
-pip install psutil
-mkdir /tmp/models/ 
+* pip install cherrypy
+* pip install bottle
+* pip install wsgi-request-logger
+* pip install boto3
+* pip install psutil
+* mkdir /tmp/models/ 
 
 
-CMD: nohup ./promiseservice.sh /tmp/daemon_promise> daemon.log 2>&1 &
+* CMD: nohup ./promiseservice.sh /tmp/daemon_promise> daemon.log 2>&1 &
 
-Recommended System Configuration:
-RAM: 32GB
-VCPUs: 4 VCPU
-Disk: 160GB
+* Recommended System Configuration:
+* * RAM: 32GB
+* * VCPUs: 4 VCPU
+* * Disk: 160GB
 	OR
-RAM: 32GB
-VCPUs: 8 VCPU
-Disk: 160GB
+* * RAM: 32GB
+* * VCPUs: 8 VCPU
+* * Disk: 160GB
 
 ### What is this repository for? ###
 
