@@ -1,4 +1,6 @@
 # LIGHTNING BOLT
+[![Python 3](https://pyup.io/repos/github/manigoswami/lightningbolt/python-3-shield.svg)](https://pyup.io/repos/github/manigoswami/lightningbolt/)
+[![Updates](https://pyup.io/repos/github/manigoswami/lightningbolt/shield.svg)](https://pyup.io/repos/github/manigoswami/lightningbolt/)
 
 This framework allows you to host a scikit-learn model in memory and serve realtime request through REST interface. This is based on scikit-learn, Bottle and CherryPy.
 
