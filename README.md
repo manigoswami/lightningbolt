@@ -1,10 +1,14 @@
 # LIGHTNING BOLT
+[![Code Climate](https://codeclimate.com/github/manigoswami/lightningbolt/badges/gpa.svg)](https://codeclimate.com/github/manigoswami/lightningbolt)
+[![Python 3](https://pyup.io/repos/github/manigoswami/lightningbolt/python-3-shield.svg)](https://pyup.io/repos/github/manigoswami/lightningbolt/)
+[![Updates](https://pyup.io/repos/github/manigoswami/lightningbolt/shield.svg)](https://pyup.io/repos/github/manigoswami/lightningbolt/)
+
 
 This framework allows you to host a scikit-learn model in memory and serve realtime request through REST interface. This is based on scikit-learn, Bottle and CherryPy.
 
 1. INSTALLATION
 
-       Recommended System Configuration (this is optional, depends on your actual model needs):
+       Recommended Production Environment Configuration (optional):
            * RAM: 32GB
 
            * VCPUs: 4 VCPU
