@@ -24,7 +24,7 @@ This framework allows you to host a sckit learn model in memory and serve realti
          B. bash Anaconda3-4.0.0-Linux-x86_64.sh
 
          C. Add following bash:
-            export PYTHONPATH="{python_path}:{path_to_lightningbolt_directory}" *Example: export PYTHONPATH="/home/centos/anaconda3/bin/python:/home/cento/RealtimePromise/"
+            export PYTHONPATH="{python_path}:{path_to_lightningbolt_directory}" *Example: export PYTHONPATH="/home/centos/anaconda3/bin/python:/home/cento/lightningbolt/"
             Source the bash
 
          D. curl "https://bootstrap.pypa.io/get-pip.py" -o "get-pip.py"
@@ -48,7 +48,7 @@ This framework allows you to host a sckit learn model in memory and serve realti
 
        For you to get started quickly we have a setup to help you get a model created quickly. It is a RF model, here's how you may get it created:
 
-        a). Use this sample command and keep the file under sample_file under /tmp/promise/training/ (see model.properties and directive modeling.training.file.path)
+        a). Use this sample command and keep the file under sample_file under /tmp/lightningbolt/training/ (see model.properties and directive modeling.training.file.path)
 
         b). Ensure the path pointed by modeling.local.save.path directive under model.properties is created)
 
@@ -61,9 +61,11 @@ This framework allows you to host a sckit learn model in memory and serve realti
 
     B. BOOTING UP THE FRAMEWORK
 
-        A. Ensure model is saved under the desired path (either in local FS or in S3).
+        A. Set appropriate path for config is set appropriately in serverconfig.py under the directive 'server.model.config.path'
 
-        B. Type in following command to start lightningbolt
+        B. Ensure model is saved under the desired path (either in local FS or in S3).
+
+        C. Type in following command to start lightningbolt
            nohup ./lightningbolt.sh /tmp/daemon_log> daemon.log 2>&1 &
 
            Feel free to customize it, I use it for my custom tests.

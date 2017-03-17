@@ -6,7 +6,7 @@ v0.0.1
 """
 from src.engine.core.prediction import Prediction
 import numpy as np
-from src.engine.promiselog import logger
+from src.engine.lightningboltlog import logger
 
 class FindBestClass(object):
 

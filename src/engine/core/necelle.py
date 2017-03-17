@@ -8,7 +8,7 @@ v0.0.1
 """
 
 from src.engine.core.models import Models
-from src.engine.promiselog import logger
+from src.engine.lightningboltlog import logger
 from config.serverconfig import config
 
 

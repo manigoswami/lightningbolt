@@ -1,7 +1,7 @@
 __author__ = 'manishankargoswami'
 # -*- coding: utf-8 -*-
 
-from src.engine.promiselog import logger
+from src.engine.lightningboltlog import logger
 
 # DO NOT RENAME THIS METHOD
 # LINKED TO MODEL CONFIGURATION

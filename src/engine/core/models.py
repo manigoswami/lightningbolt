@@ -8,7 +8,7 @@ import configparser
 
 from config.modelConfiguration import models, features
 from src.engine.core.model import Model
-from src.engine.promiselog import logger
+from src.engine.lightningboltlog import logger
 from src.engine.utils.s3 import S3
 
 from config.serverconfig import config as primary_config

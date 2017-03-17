@@ -11,18 +11,17 @@ from logging.handlers import TimedRotatingFileHandler
 from config.logconfig import config
 
 
-class PromiseLog(object):
+class LightningboltLog(object):
     def __init__(self):
-        self.__logger = logging.getLogger("Promise Rotating Log")
-        #self.__logger.setLevel(logging.INFO)
-        self.__logger.setLevel(config['promise.logging.log.level'])
+        self.__logger = logging.getLogger("Lightningbolt Rotating Log")
+        self.__logger.setLevel(config['lightningbolt.logging.log.level'])
         formatter = logging.Formatter('%(asctime)s %(levelname)-8s %(message)s',
                                       datefmt='%m-%d %H:%M')
 
-        handler = TimedRotatingFileHandler(config['promise.app.log.path'],
+        handler = TimedRotatingFileHandler(config['lightningbolt.app.log.path'],
                                            when="h",
                                            interval=config[
-                                               'promise.rotation.interval.in.hours'],
+                                               'lightningbolt.rotation.interval.in.hours'],
                                            backupCount=5)
         handler.setFormatter(formatter)
         self.__logger.addHandler(handler)
@@ -31,7 +30,7 @@ class PromiseLog(object):
         return self.__logger
 
 
-logger = PromiseLog().getlog()  # do not remove this line
+logger = LightningboltLog().getlog()  # do not remove this line
 
-accessloghandlers = [TimedRotatingFileHandler(config['promise.access.log.path'], 'h', config[
-    'promise.rotation.interval.in.hours']), ]  # do not remove this line
+accessloghandlers = [TimedRotatingFileHandler(config['lightningbolt.access.log.path'], 'h', config[
+    'lightningbolt.rotation.interval.in.hours']), ]  # do not remove this line

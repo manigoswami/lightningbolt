@@ -11,7 +11,7 @@ import numpy as np
 
 from src.engine.utils import toolbox
 from src.engine.core.prediction import Prediction
-from src.engine.promiselog import logger
+from src.engine.lightningboltlog import logger
 
 
 

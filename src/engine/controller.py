@@ -10,7 +10,7 @@ v0.0.1
 from bottle import Bottle, request, response
 from requestlogger import WSGILogger, ApacheFormatter
 
-from src.engine.promiselog import accessloghandlers
+from src.engine.lightningboltlog import accessloghandlers
 from src.engine.core.necelle import Necelle
 import src.engine.utils.toolbox as tb
 
@@ -21,14 +21,13 @@ tb.write_to_console("loaded all models...ready to take traffic...")
 
 
 @app.route('/lightningbolt/test/v1', method='POST')
-def getpromise():
+def get_prediction():
     if not necelle.validate_request(request.json):
         response.status = 400
         return tb.invalid_request_message()
 
     try:
-        promise = necelle.predict(request.json)
-        return promise
+        return necelle.predict(request.json)
 
     except Exception as e:
         return tb.invalid_model_message(e)

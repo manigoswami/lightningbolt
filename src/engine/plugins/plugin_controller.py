@@ -5,7 +5,7 @@ This is a plugin handler which allows one to add their own plugins to the servic
 v0.0.1
 """
 
-from src.engine.promiselog import logger
+from src.engine.lightningboltlog import logger
 
 class PluginController(object):
 

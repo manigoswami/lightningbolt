@@ -1,7 +1,7 @@
 
 config = {
-    'promise.access.log.path': '../logs/access.log',
-    'promise.app.log.path': '../logs/promise-ms-app',
-    'promise.rotation.interval.in.hours': 24,
-    'promise.logging.log.level': 'INFO'
+    'lightningbolt.access.log.path': '../logs/access.log',
+    'lightningbolt.app.log.path': '../logs/lightningbolt-ms-app',
+    'lightningbolt.rotation.interval.in.hours': 24,
+    'lightningbolt.logging.log.level': 'INFO'
 }
