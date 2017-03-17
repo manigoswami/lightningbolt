@@ -1,6 +1,6 @@
-#LIGHTNINGBOLT
+# LIGHTNING BOLT
 
-This framework allows you to host a scikit-learn model in memory and serve realtime request through REST interface. 
+This framework allows you to host a scikit-learn model in memory and serve realtime request through REST interface. This is based on scikit-learn, Bottle and CherryPy.
 
 1. INSTALLATION
 
