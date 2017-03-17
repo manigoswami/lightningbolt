@@ -19,7 +19,7 @@ if cmd_subfolder not in sys.path:
 from src.serverlib import run_in_cp_tree
 from src.engine.controller import app
 
-parser = argparse.ArgumentParser(description="Promise Micro service")
+parser = argparse.ArgumentParser(description="Lightningbolt Micro service")
 parser.add_argument('--pidfile', help='process id file', type=str)
 args = parser.parse_args()
 

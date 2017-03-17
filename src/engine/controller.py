@@ -2,7 +2,7 @@ __author__ = 'manishankargoswami'
 
 """
 This is the primary controller which fires all engine component
-and prepares itself to respond in real-time to generate promise
+and prepares itself to respond in real-time to generate prediction
 
 v0.0.1
 """
