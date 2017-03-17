@@ -1,6 +1,7 @@
 __author__ = 'manishankargoswami'
 # -*- coding: utf-8 -*-
 
+from src.engine.promiselog import logger
 
 # DO NOT RENAME THIS METHOD
 # LINKED TO MODEL CONFIGURATION
@@ -26,7 +27,8 @@ def invalid_request_message():
 
 
 def invalid_model_message(e):
-    return {"error": "request had some issue" + str(e)}
+    logger.error(e)
+    return {"error": "encountered some technical issue while processing the request. "}
 
 
 

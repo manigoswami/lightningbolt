@@ -20,19 +20,18 @@ necelle = Necelle()
 tb.write_to_console("loaded all models...ready to take traffic...")
 
 
-@app.route('/promise/v1', method='POST')
+@app.route('/lightningbolt/test/v1', method='POST')
 def getpromise():
-    if not necelle.validaterequest(request.json):
+    if not necelle.validate_request(request.json):
         response.status = 400
         return tb.invalid_request_message()
 
     try:
-        promise = necelle.promise(request.json)
+        promise = necelle.predict(request.json)
         return promise
 
-    except ValueError as e:
-        response.status = 400
-        return tb.invalid_model_message(str(e))
+    except Exception as e:
+        return tb.invalid_model_message(e)
 
 
 app = WSGILogger(app, accessloghandlers, ApacheFormatter())

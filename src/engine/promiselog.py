@@ -14,7 +14,8 @@ from config.logconfig import config
 class PromiseLog(object):
     def __init__(self):
         self.__logger = logging.getLogger("Promise Rotating Log")
-        self.__logger.setLevel(logging.INFO)
+        #self.__logger.setLevel(logging.INFO)
+        self.__logger.setLevel(config['promise.logging.log.level'])
         formatter = logging.Formatter('%(asctime)s %(levelname)-8s %(message)s',
                                       datefmt='%m-%d %H:%M')
 

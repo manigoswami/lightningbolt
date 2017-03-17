@@ -1,65 +1,87 @@
-# README #
+This framework allows you to host a sckit learn model in memory and serve realtime request through REST.
 
-### Installation Instructions:###
-* wget http://repo.continuum.io/archive/Anaconda3-4.0.0-Linux-x86_64.sh
-* bash Anaconda3-4.0.0-Linux-x86_64.sh
-* Add following bash:
-  * export PYTHONPATH="{python_path}:{path_to_thuderbolt_directory}"
-  *Example:
-  **export PYTHONPATH="/home/centos/anaconda3/bin/python:/home/cento/RealtimePromise/"**
-* Source the bash
-* curl "https://bootstrap.pypa.io/get-pip.py" -o "get-pip.py"
-* sudo python get-pip.py
+1. INSTALLATION
 
-* pip install cherrypy
-* pip install bottle
-* pip install wsgi-request-logger
-* pip install boto3
-* pip install psutil
-* mkdir /tmp/models/ 
+       Recommended System Configuration (this is optional, depends on your actual model needs):
+           * RAM: 32GB
 
-* CMD: nohup ./promiseservice.sh /tmp/daemon_promise> daemon.log 2>&1 &
+           * VCPUs: 4 VCPU
 
-* Recommended System Configuration:
-* * RAM: 32GB
-* * VCPUs: 4 VCPU
-* * Disk: 160GB
-	OR
-* * RAM: 32GB
-* * VCPUs: 8 VCPU
-* * Disk: 160GB
+           * Disk: 160GB OR
 
-### How to test the setup ###
-To ensure that your setup is working, make a curl to your API using the address of the host on which setup was deployed.
+           * RAM: 32GB
 
-curl -X POST -d @data_file -H "Content-Type: application/json" "http://{ip_address_of_host}:{port}/{api_path}/v1"
+           * VCPUs: 8 VCPU
 
-data_file can have all your required stuff. 
-Example:
-
-{"features": {
-                "model": "{model_name}",
-                "label": 0,
-                "suborder": 13290438361,
-                "fp_code": "assa278",
-                "dest_city": "Delhi",
-                "vendor_code": "XCCF8687",
-                "dest_tier": 1,
-                "origin_city": "Bangalore",
-                "shippingMode": "Air",
-                "timeOfTheDay": 2,
-                "dayOfTheWeek": 1,
-                "product_category": "Mobiles",
-                "weight_category": 2,
-                "makeToOder": 0,
-                "VolWt": "8.75",
-                "SameCity": 0,
-                "bucket_category":1
-        }
-}
+           * Disk: 160GB
 
 
-### Who do I talk to? ###
 
-* Repo owner or admin
-* Other community or team contact
+       Here are the steps to get your installation created:
+
+         A. wget http://repo.continuum.io/archive/Anaconda3-4.0.0-Linux-x86_64.sh
+
+         B. bash Anaconda3-4.0.0-Linux-x86_64.sh
+
+         C. Add following bash:
+            export PYTHONPATH="{python_path}:{path_to_lightningbolt_directory}" *Example: export PYTHONPATH="/home/centos/anaconda3/bin/python:/home/cento/RealtimePromise/"
+            Source the bash
+
+         D. curl "https://bootstrap.pypa.io/get-pip.py" -o "get-pip.py"
+
+         E. sudo python get-pip.py
+
+         F. Now run following commands:
+
+              pip install cherrypy
+              pip install bottle
+              pip install wsgi-request-logger
+              pip install boto3
+              pip install psutil
+
+         G. mkdir /tmp/models/
+
+
+2. GETTING STARTED
+
+    A. CREATE A MODEL
+
+       For you to get started quickly we have a setup to help you get a model created quickly. It is a RF model, here's how you may get it created:
+
+        a). Use this sample command and keep the file under sample_file under /tmp/promise/training/ (see model.properties and directive modeling.training.file.path)
+
+        b). Ensure the path pointed by modeling.local.save.path directive under model.properties is created)
+
+        c). Verify the sample modelConfiguration.py file, the id there is MODEL1 which is exactly which we pass in the next command or other way around,
+
+        d). Then try this command out.
+            python modeller.py MODEL1 label,f1,f2,f3,f4,f5,f6,f7,f8,f9,f10,f11,f12
+
+       It will save the required model under the path configured under model.properties file. It could save under S3 (model.s3.enabled) or local file (model.fs.enabled
+
+    B. BOOTING UP THE FRAMEWORK
+
+        A. Ensure model is saved under the desired path (either in local FS or in S3).
+
+        B. Type in following command to start lightningbolt
+           nohup ./lightningbolt.sh /tmp/daemon_log> daemon.log 2>&1 &
+
+           Feel free to customize it, I use it for my custom tests.
+
+        D. Check both daemon logs and app logs.
+           Currently app logs are loaded inside the logs folder. Log properties can be changed using logconfig.py
+           located under the config directory.
+
+    C. TEST THE SETUP
+
+       Issue a sample curl request.
+
+         a) First create a data file to holds request content.
+         You may use the sample data stored under test_sample_file_lightningbolt. This contains sample request from the sample model.
+
+         b) Now fire the following curl command
+          curl -X POST -d @test_sample_file_lightningbolt -H "Content-Type: application/json" "http://localhost:8080/lightningbolt/test/v1"
+
+         c) It should return a json response. Yah! you are all set now.
+
+5. Dig deeper now and feel free to customize as required.

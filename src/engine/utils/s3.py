@@ -18,12 +18,12 @@ class S3(object):
 
     def download(self):
         files = self._config.get('models', 'model.location.files')
-        local_path = self._config.get('models', 'model.location.local')
+        local_path = self._config.get('models', 'model.download.location.local')
         file_list = files.split(",")
         self._load_from_s3(file_list, local_path)
 
     def _load_from_s3(self, object_list, local_path):
-        #primary = self._config.get('models', 'model.location.primary')
+        primary = self._config.get('models', 'model.location.primary')
 
         bucket = self._config.get('s3', 's3.bucket')
         key = self._config.get('s3', 's3.key')
