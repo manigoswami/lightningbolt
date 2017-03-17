@@ -46,7 +46,13 @@ This framework allows you to host a scikit-learn model in memory and serve realt
 
 2. GETTING STARTED
 
-    A. CREATE A MODEL
+    A. CHECKOUT THE SOURCE
+
+           git clone git@github.com:manigoswami/lightningbolt.git
+           cd lightningbolt
+
+    B. CREATE A MODEL
+
 
        For you to get started quickly we have a setup to help you get a model created quickly. It is a RF model, here's how you may get it created:
 
