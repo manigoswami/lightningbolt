@@ -8,7 +8,7 @@ This framework allows you to host a scikit-learn model in memory and serve realt
 
 1. INSTALLATION
 
-       Recommended System Configuration (this is optional, depends on your actual model needs):
+       Recommended Production Environment Configuration (optional):
            * RAM: 32GB
 
            * VCPUs: 4 VCPU
