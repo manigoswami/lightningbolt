@@ -1,3 +1,4 @@
+LIGHTNINGBOLT
 This framework allows you to host a sckit learn model in memory and serve realtime request through REST.
 
 1. INSTALLATION
